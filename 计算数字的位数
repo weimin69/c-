@@ -12,3 +12,5 @@ int main() {
     printf("%d",n);
     return 0;
 }
+
+//不支持0的位数计算，若要支持0，在while外面加上n++，以及x=x/10
