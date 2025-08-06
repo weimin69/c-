@@ -1,0 +1,22 @@
+#include <stdio.h>
+int main() {
+    int minute1, minute2, second1, second2;
+    printf("请输入您的第一个时间（分钟 秒）：");
+    scanf("%d %d", &minute1, &second1);
+    printf("请输入您的第二个时间（分钟 秒）：");
+    scanf("%d %d", &minute2, &second2);
+
+    // 做减法
+    int minute_diff = minute2 - minute1;
+    int second_diff = second2 - second1;
+
+    if (second_diff < 0) {
+        // 借位处理
+        minute_diff--;
+        second_diff += 60;
+    }
+
+    printf("这两个时间的差值为%d分钟，%d秒", minute_diff, second_diff);
+
+    return 0;
+}
