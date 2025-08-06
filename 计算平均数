@@ -1,0 +1,26 @@
+#include <stdio.h>
+int main() {
+
+
+    double sum,count;
+    sum = 0.0;
+    count = 0.0;
+    printf("if you want to end your number ,please enter -1! ");
+    printf("Please enter you  numbers ");
+    double total;
+    //计算循环
+    do {
+        scanf("%lf",&sum);
+        if (sum !=-1) {
+        count++;
+        total = total+  sum;
+        }
+
+    }while (sum != -1);
+
+    double number;
+
+    printf("平均数为：%lf",number = total/count);
+
+    return 0;
+}
