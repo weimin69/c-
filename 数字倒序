@@ -1,8 +1,8 @@
 #include <stdio.h>
 int main (){
     int x;
-    x=12345;
-    //scanf ("%d",&x);
+    //x=12345;
+    scanf ("%d",&x);
     int digit ;
     int ret=0;
     while (x>0) {
