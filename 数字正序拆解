@@ -1,0 +1,76 @@
+#include <stdio.h>
+int main (){
+    int x=0;
+    scanf("%d",&x);
+    int t = 0;
+    do {
+        int d =x%10;
+        t = t*10+d;
+        x/=10;
+
+    }while (x>0);
+    printf("t=%d\n",t);
+    x=t;
+    do {
+        int d=x%10;
+        printf("%d",d);
+        if (x>9 ) {
+            printf(" ");
+        }
+        x/=10;
+    }while (x>0 );
+    printf("\n");
+    return 0;
+}
+//适用于结尾开头不是0的数字
+
+/*接下来讲适用于0 数字的算法
+
+
+例如int x = 13425；
+13425/10000 - >1
+13425%10000 ->3425
+10000/10 ->1000
+3425/1000 ->3
+......
+
+*/
+
+
+#include <math.h>
+#include <stdio.h>
+int main (){
+    int x = 0,count =0;
+    scanf("%d",&x);
+    int b= x;//要备份一份x来保证不会被除光
+
+    while (b>0) {
+        b/=10;
+        count++;
+    }
+    //这个位置来判断有多少位数字
+    printf("count=%d\n",count);
+    int digit = (int)pow(10,count-1);
+    printf("digit=%d\n",digit);
+    do {
+        int d=x/digit;
+        printf("%d",d);
+        //下面的代码是判断最后一位数字后面不放空格
+        if (digit>9) {
+            printf(" ");
+        }
+        //
+        x%=digit;//对x取余并且赋值，例如x=1234时，此时digit=1000，那么这一步的x的输出结构就是234
+        digit/=10;
+
+    }while (digit>0);
+    printf("\n");
+    return 0;
+}
+
+
+
+
+
+
+
