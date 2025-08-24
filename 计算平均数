@@ -7,7 +7,7 @@ int main() {
     count = 0.0;
     printf("if you want to end your number ,please enter -1! ");
     printf("Please enter you  numbers ");
-    double total;
+    double total=0.0;
     //计算循环
     do {
         scanf("%lf",&sum);
